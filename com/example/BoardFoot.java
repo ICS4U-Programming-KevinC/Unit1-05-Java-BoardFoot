@@ -11,47 +11,46 @@ import java.util.Scanner;
 // BoardFoot class
 public final class BoardFoot {
 
-    static double BOARD_FOOT = 144.0; 
+  static double BOARD_FOOT = 144.0;
 
-    /** Private constructor to prevent instantiation. */
-    private BoardFoot() {
-        throw new UnsupportedOperationException("Cannot instantiate");
+  /** Private constructor to prevent instantiation. */
+  private BoardFoot() {
+    throw new UnsupportedOperationException("Cannot instantiate");
+  }
+
+  /**
+   * This is the main method.
+   *
+   * @param args Unused
+   */
+  public static void main(final String[] args) {
+    // Tell the user what the program does.
+    System.out.print("This program calculates the length of your board ");
+    System.out.println("foot given the width and height (in inches).");
+
+    // Create the scanner.
+    Scanner sc = new Scanner(System.in);
+
+    try {
+      // Get user input.
+      System.out.println("What is the width of your board foot?");
+      double width = sc.nextDouble();
+      System.out.println("What is the height of your board foot?");
+      double height = sc.nextDouble();
+
+      double boardFoot = CalculateBoardFoot(width, height);
+
+      System.out.print("Your board foot is ");
+      System.out.print(String.format("%.2f", boardFoot));
+      System.out.println(" inches long.");
+
+    } catch (Exception e) {
+      System.out.println("Please enter a proper number!\n");
     }
+  }
 
-    /**
-     * This is the main method.
-     *
-     * @param args Unused
-     */
-    public static void main(final String[] args) {
-        // Tell the user what the program does.
-        System.out.print("This program calculates the length of your board ");
-        System.out.println("foot given the width and height (in inches).");
-
-        // Create the scanner.
-        Scanner sc = new Scanner(System.in);
-
-        try {
-            // Get user input.
-            System.out.println("What is the width of your board foot?");
-            double width = sc.nextDouble();
-            System.out.println("What is the height of your board foot?");
-            double height = sc.nextDouble();
-
-            double boardFoot = CalculateBoardFoot(width, height);
-
-            System.out.print("Your board foot is ");
-            System.out.print(String.format("%.2f", boardFoot));
-            System.out.println(" inches long.");
-
-        } catch (Exception e) {
-            System.out.println("Please enter a proper number!\n");
-        }
-    }
-
-    static double CalculateBoardFoot(double width, double height)
-    {
-        double length = BOARD_FOOT / (width * height);
-        return length;
-    }
+  static double CalculateBoardFoot(double width, double height) {
+    double length = BOARD_FOOT / (width * height);
+    return length;
+  }
 }
