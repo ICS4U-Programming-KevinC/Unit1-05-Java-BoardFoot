@@ -11,7 +11,8 @@ import java.util.Scanner;
 // BoardFoot class
 public final class BoardFoot {
 
-  static double BOARD_FOOT = 144.0;
+  /** Define a board foot. */
+  static final double BOARD_FOOT = 144.0;
 
   /** Private constructor to prevent instantiation. */
   private BoardFoot() {
@@ -34,11 +35,11 @@ public final class BoardFoot {
     try {
       // Get user input.
       System.out.println("What is the width of your board foot?");
-      double width = sc.nextDouble();
+      final double width = sc.nextDouble();
       System.out.println("What is the height of your board foot?");
-      double height = sc.nextDouble();
+      final double height = sc.nextDouble();
 
-      double boardFoot = CalculateBoardFoot(width, height);
+      final double boardFoot = CalculateBoardFoot(width, height);
 
       System.out.print("Your board foot is ");
       System.out.print(String.format("%.2f", boardFoot));
