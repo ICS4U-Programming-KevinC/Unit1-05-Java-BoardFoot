@@ -39,7 +39,7 @@ public final class BoardFoot {
       System.out.println("What is the height of your board foot?");
       final double height = sc.nextDouble();
 
-      final double boardFoot = CalculateBoardFoot(width, height);
+      final double boardFoot = calculateBoardFoot(width, height);
 
       System.out.print("Your board foot is ");
       System.out.print(String.format("%.2f", boardFoot));
@@ -50,7 +50,7 @@ public final class BoardFoot {
     }
   }
 
-  static double CalculateBoardFoot(double width, double height) {
+  static double calculateBoardFoot(final double width, final double height) {
     double length = BOARD_FOOT / (width * height);
     return length;
   }
