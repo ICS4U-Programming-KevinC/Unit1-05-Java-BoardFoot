@@ -41,7 +41,7 @@ public final class BoardFoot {
 
       // Catches a negative in the input
       if (width <= 0 || height <= 0) {
-        System.out.print("You can't have a negative side length!");
+        System.out.println("You can't have a negative side length!");
       } else {
         final double boardFoot = calculateBoardFoot(width, height);
 
