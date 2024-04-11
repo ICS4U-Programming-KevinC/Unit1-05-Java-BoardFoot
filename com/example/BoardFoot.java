@@ -39,11 +39,16 @@ public final class BoardFoot {
       System.out.println("What is the height of your board foot?");
       final double height = sc.nextDouble();
 
-      final double boardFoot = calculateBoardFoot(width, height);
+      // Catches a negative in the input
+      if (width <= 0 || height <= 0) {
+        System.out.print("You can't have a negative side length!");
+      } else {
+        final double boardFoot = calculateBoardFoot(width, height);
 
-      System.out.print("Your board foot is ");
-      System.out.print(String.format("%.2f", boardFoot));
-      System.out.println(" inches long.");
+        System.out.print("Your board foot is ");
+        System.out.print(String.format("%.2f", boardFoot));
+        System.out.println(" inches long.");
+      }
 
     } catch (Exception e) {
       System.out.println("Please enter a proper number!\n");
