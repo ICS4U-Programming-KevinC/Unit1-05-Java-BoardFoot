@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Change me.
+ * Calculates the board foot.
  *
  * @author Kevin Csiffary
  * @version 1.0
